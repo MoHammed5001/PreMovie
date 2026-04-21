@@ -14,10 +14,10 @@
 <div class="bg-orb orb1"></div>
 <div class="bg-orb orb2"></div>
 
-<nav>
-  <div class="nav-logo">
+<nav><a href="home.html"><div class="nav-logo">
     <span>🎬</span> PreMovie
-  </div>
+  </div></a>
+  
   <ul class="nav-links">
     <li><a href="home.html">Home</a></li>
     <li><a href="#movies" class="active">Movies</a></li>
@@ -59,11 +59,10 @@
         <span class="rating-badge">7.8/10</span>
       </div>
     </div>
-    <div class="hero-btns">
-      <button class="btn-primary">▶ Watching now</button>
-      <button class="btn-secondary">⬇ Download</button>
-    </div>
-    <div class="synopsis-title">Synopsis:</div>
+<div class="hero-btns">
+  <button id="playBtn" class="btn-primary" data-url="https://youtu.be/nb_fFj_0rq8?si=LIPtaszDohCEws3f">▶ Watching now</button>
+  <button class="btn-secondary">⬇ Download</button>
+</div>    <div class="synopsis-title">Synopsis:</div>
     <p class="synopsis-text">
       "Avatar" is set in the mid-22nd century on the fictional planet of Pandora. The story follows Jake Sully, a former Marine who becomes paralyzed and takes part in the Avatar Program. The program enables humans to remotely control genetically engineered bodies called avatars to interact with the indigenous humanoid species, the Na'vi. As Jake becomes more immersed in Pandora's world, he finds himself torn between loyalty to the human corporation exploiting Pandora's resources and his growing love for a Na'vi woman named Neytiri.
     </p>
@@ -77,69 +76,95 @@
     <span id="Related-Movies" class="section-title">Related Movies </span>
     <button class="section-more">See all ›</button>
   </div>
-  <div class="related-grid">
-    <div class="related-card">
-      <div class="related-img"><img src="img/9ab50a8d55f47ab21dbba4a57253d86739e1adcd.png" alt="Guardians of the Galaxy"></div>
-      <div class="related-info">
-        <div class="related-title">Guardians of the Galaxy</div>
-        <div class="related-rating">★ 8/10</div>
-      </div>
-    </div>
-    <div class="related-card">
-      <div class="related-img"><img src="img/5dd7d179c4892613f6f14f33fafb517d236cbc04.png" alt="Interstellar"></div>
-      <div class="related-info">
-        <div class="related-title">Interstellar</div>
-        <div class="related-rating">★ 9/10</div>
-      </div>
-    </div>
-    <div class="related-card">
-      <div class="related-img"><img src="img/c1ec2921121d1d8e1489015a8e46f947be843d3f.png" alt="Kin"></div>
-      <div class="related-info">
-        <div class="related-title">Kin</div>
-        <div class="related-rating">★ 6/10</div>
-      </div>
-    </div>
-    <div class="related-card">
-      <div class="related-img"><img src="img/f1bf13e0f73c4224011c5583d823ed44a7f5cdeb.png" alt="Annihilation"></div>
-      <div class="related-info">
-        <div class="related-title">Annihilation</div>
-        <div class="related-rating">★ 7/10</div>
-      </div>
+<div class="related-grid">
+  <div class="related-card" data-url="https://www.youtube.com/watch?v=d96cjJhvlMA">
+    <div class="related-img"><img src="img/9ab50a8d55f47ab21dbba4a57253d86739e1adcd.png" alt="Guardians of the Galaxy"></div>
+    <div class="related-info">
+      <div class="related-title">Guardians of the Galaxy</div>
+      <div class="related-rating">★ 8/10</div>
     </div>
   </div>
-  <section class="browse-section">
+
+  <div class="related-card" data-url="https://www.youtube.com/watch?v=Ac5wrM2uYbk">
+    <div class="related-img"><img src="img/5dd7d179c4892613f6f14f33fafb517d236cbc04.png" alt="Interstellar"></div>
+    <div class="related-info">
+      <div class="related-title">Interstellar</div>
+      <div class="related-rating">★ 9/10</div>
+    </div>
+  </div>
+
+  <div class="related-card" data-url="https://www.youtube.com/watch?v=zSWdZVtXT7E">
+    <div class="related-img"><img src="img/c1ec2921121d1d8e1489015a8e46f947be843d3f.png" alt="Kin"></div>
+    <div class="related-info">
+      <div class="related-title">Kin</div>
+      <div class="related-rating">★ 6/10</div>
+    </div>
+  </div>
+
+  <div class="related-card" data-url="https://www.youtube.com/watch?v=89OP78l9oF0">
+    <div class="related-img"><img src="img/f1bf13e0f73c4224011c5583d823ed44a7f5cdeb.png" alt="Annihilation"></div>
+    <div class="related-info">
+      <div class="related-title">Annihilation</div>
+      <div class="related-rating">★ 7/10</div>
+    </div>
+  </div>
+</div>
+
+<section class="browse-section">
   <div class="section-header">
     <span class="section-title">For you</span>
     <button class="section-more">See all ›</button>
   </div>
   <div class="browse-scroll">
-    <div class="browse-card">
-      <div class="browse-card-img"><img src="img/1.png" alt="Aladdin"><button class="heart-btn">♡</button></div>
+    <div class="browse-card" data-url="https://youtu.be/kpGo2_d3oYE?si=LBt-PMAEXfq8CiiN">
+      <div class="browse-card-img">
+        <img src="img/1.png" alt="The little mermaid">
+        <button class="heart-btn">♡</button>
+      </div>
       <div class="browse-card-title">The little mermaid</div>
     </div>
-    <div class="browse-card">
-      <div class="browse-card-img"><img src="img/Spider-Man.png" alt="Spider-Man"><button class="heart-btn">♡</button></div>
+
+    <div class="browse-card" data-url="https://youtu.be/aBlsrtxuwss?si=VrUr5LP2X7MTEMhb">
+      <div class="browse-card-img">
+        <img src="img/Spider-Man.png" alt="Spider-Man">
+        <button class="heart-btn">♡</button>
+      </div>
       <div class="browse-card-title">Spider-Man</div>
     </div>
-    <div class="browse-card">
-      <div class="browse-card-img"><img src="img/8d07d74cfd17aa25ae8be3e7f942c3ca4953ad0a.png" alt="Beauty and the Beast"><button class="heart-btn">♡</button></div>
+
+    <div class="browse-card" data-url="https://youtu.be/pnkgw6pAKkM?si=rvn3_uEgz79BB5sT">
+      <div class="browse-card-img">
+        <img src="img/8d07d74cfd17aa25ae8be3e7f942c3ca4953ad0a.png" alt="Beauty and the Beast">
+        <button class="heart-btn">♡</button>
+      </div>
       <div class="browse-card-title">Beauty and the Beast</div>
     </div>
-    <div class="browse-card">
-      <div class="browse-card-img"><img src="img/Harry Potter.png" alt="Harry Potter"><button class="heart-btn">♡</button></div>
+
+    <div class="browse-card" data-url="https://youtu.be/RIu4sFKGi6E?si=VLLfI3rD93CcC90j">
+      <div class="browse-card-img">
+        <img src="img/Harry Potter.png" alt="Harry Potter">
+        <button class="heart-btn">♡</button>
+      </div>
       <div class="browse-card-title">Harry Potter</div>
     </div>
-    <div class="browse-card">
-      <div class="browse-card-img"><img src="img/71aecd0272cf986ed2eb479b741e0f4abe1e6d1c.png" alt="Alice in Wonderland"><button class="heart-btn">♡</button></div>
+
+    <div class="browse-card" data-url="https://youtu.be/ENDLDgje0Wc?si=rEWEWZ76m7UwKU3K">
+      <div class="browse-card-img">
+        <img src="img/71aecd0272cf986ed2eb479b741e0f4abe1e6d1c.png" alt="Alice in Wonderland">
+        <button class="heart-btn">♡</button>
+      </div>
       <div class="browse-card-title">Alice in Wonderland</div>
     </div>
-    <div class="browse-card">
-      <div class="browse-card-img"><img src="img/5.png" alt="A Fairy Tale"><button class="heart-btn">♡</button></div>
+
+    <div class="browse-card" data-url="https://youtu.be/bME6kO2KXNk?si=5sxZkW778Zoqss9T">
+      <div class="browse-card-img">
+        <img src="img/5.png" alt="A Fairy Tale">
+        <button class="heart-btn">♡</button>
+      </div>
       <div class="browse-card-title">A Fairy Tale</div>
     </div>
   </div>
 </section>
-
 <!-- ===== TRENDING ===== -->
 <section class="trending-section">
   <div class="trending-header">
@@ -281,14 +306,16 @@ In an exciting development for Disney Active Life fans, it has been announced th
 </footer>
 
 <div class="footer-bottom">
-  <span>© 2024 PreMovie. All rights reserved.</span>
+  <span>© 2026 PreMovie. All rights reserved.</span>
   <span style="display:flex;gap:16px;">
     <a href="#" style="color:var(--text-muted);text-decoration:none;">Privacy</a>
     <a href="#" style="color:var(--text-muted);text-decoration:none;">Terms</a>
     <a href="#" style="color:var(--text-muted);text-decoration:none;">Cookies</a>
   </span>
 </div>
+<script>
 
+</script>
 <script src="movies-features.js"></script>
 <script src="news-slider.js"></script>
 </body>
