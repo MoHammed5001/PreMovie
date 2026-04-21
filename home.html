@@ -6,9 +6,6 @@
   <title>PreMovie – Discover Cinematic Worlds</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* ============================================================
-       RESET & VARIABLES
-    ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -40,9 +37,6 @@
       cursor: none;
     }
 
-    /* ============================================================
-       CUSTOM CURSOR
-    ============================================================ */
     #cursor-dot {
       position: fixed;
       width: 8px; height: 8px;
@@ -72,9 +66,6 @@
       opacity: 0.4;
     }
 
-    /* ============================================================
-       CANVAS STARS BACKGROUND
-    ============================================================ */
     #starfield {
       position: fixed;
       inset: 0;
@@ -82,9 +73,6 @@
       pointer-events: none;
     }
 
-    /* ============================================================
-       NOISE OVERLAY
-    ============================================================ */
     .noise {
       position: fixed;
       inset: 0;
@@ -93,10 +81,6 @@
       opacity: 0.03;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     }
-
-    /* ============================================================
-       AMBIENT ORBS
-    ============================================================ */
     .orb {
       position: fixed;
       border-radius: 50%;
@@ -107,17 +91,9 @@
     .orb-1 { width:600px;height:600px;background:rgba(124,58,237,0.12);top:-200px;left:-150px; }
     .orb-2 { width:500px;height:500px;background:rgba(192,38,211,0.08);bottom:-100px;right:-100px; }
     .orb-3 { width:300px;height:300px;background:rgba(245,158,11,0.05);top:40%;left:50%;transform:translateX(-50%); }
-
-    /* ============================================================
-       SCROLLBAR
-    ============================================================ */
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 2px; }
-
-    /* ============================================================
-       NAV
-    ============================================================ */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 500;
@@ -246,7 +222,6 @@
 
     .nav-icon-btn:hover { background: var(--bg-card-h); border-color: var(--border-h); color: #fff; }
 
-    /* Search overlay */
     #search-overlay {
       position: fixed;
       inset: 0;
@@ -330,9 +305,7 @@
 
     .search-hint:hover { background: var(--bg-card-h); color: var(--purple-light); border-color: var(--border-h); }
 
-    /* ============================================================
-       HERO SECTION
-    ============================================================ */
+ 
     .hero {
       position: relative;
       min-height: 100vh;
@@ -359,7 +332,6 @@
         linear-gradient(180deg, transparent 50%, var(--bg) 100%);
     }
 
-    /* Animated scanlines */
     .hero-scanlines {
       position: absolute;
       inset: 0;
@@ -373,7 +345,6 @@
       pointer-events: none;
     }
 
-    /* Floating particles container */
     .hero-particles {
       position: absolute;
       inset: 0;
@@ -776,10 +747,6 @@
       from { opacity: 0; transform: translateX(-30px); }
       to   { opacity: 1; transform: translateX(0); }
     }
-
-    /* ============================================================
-       TICKER / MARQUEE
-    ============================================================ */
     .ticker-wrap {
       position: relative;
       z-index: 3;
@@ -820,10 +787,6 @@
       from { transform: translateX(0); }
       to   { transform: translateX(-50%); }
     }
-
-    /* ============================================================
-       SECTION COMMON
-    ============================================================ */
     .section-wrap {
       position: relative;
       z-index: 3;
@@ -875,7 +838,6 @@
 
     .see-all-btn:hover { background: var(--bg-card-h); border-color: var(--border-h); color: var(--purple-light); }
 
-    /* DIVIDER */
     .divider {
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--border), transparent);
@@ -883,10 +845,7 @@
       z-index: 3;
       margin: 0 52px;
     }
-
-    /* ============================================================
-       CATEGORY TABS
-    ============================================================ */
+ 
     .cat-tabs {
       display: flex;
       gap: 8px;
@@ -915,10 +874,6 @@
       color: #fff;
       box-shadow: 0 4px 16px var(--purple-glow);
     }
-
-    /* ============================================================
-       MOVIE CARDS GRID
-    ============================================================ */
     .movies-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -1061,9 +1016,6 @@
 
     .movie-card-rating span { color: var(--text-muted); font-size: 11px; }
 
-    /* ============================================================
-       HORIZONTAL SCROLL
-    ============================================================ */
     .hscroll-wrap {
       position: relative;
     }
@@ -1105,10 +1057,6 @@
     .scroll-arrow:hover { background: var(--purple); border-color: var(--purple); }
     .scroll-arrow.left { left: -20px; }
     .scroll-arrow.right { right: -20px; }
-
-    /* ============================================================
-       FEATURED / SPOTLIGHT
-    ============================================================ */
     .spotlight {
       position: relative;
       z-index: 3;
@@ -1214,10 +1162,7 @@
       inset: 0;
       background: linear-gradient(90deg, rgba(6,6,15,0.6), transparent 30%, transparent);
     }
-
-    /* ============================================================
-       NEWS SECTION
-    ============================================================ */
+ 
     .news-grid {
       display: grid;
       grid-template-columns: 1.6fr 1fr;
@@ -1300,7 +1245,6 @@
       color: var(--text-muted);
     }
 
-    /* Slideshow dots */
     .news-dots {
       display: flex;
       gap: 6px;
@@ -1390,9 +1334,6 @@
       color: var(--yellow);
     }
 
-    /* ============================================================
-       FOOTER
-    ============================================================ */
     footer {
       position: relative;
       z-index: 3;
@@ -1480,9 +1421,6 @@
     .footer-bottom a { color: var(--text-muted); text-decoration: none; transition: color var(--transition); }
     .footer-bottom a:hover { color: var(--purple-light); }
 
-    /* ============================================================
-       SCROLL REVEAL ANIMATION
-    ============================================================ */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -1494,7 +1432,6 @@
       transform: translateY(0);
     }
 
-    /* Stagger children */
     .reveal-stagger > * {
       opacity: 0;
       transform: translateY(20px);
@@ -1509,10 +1446,6 @@
     .reveal-stagger.visible > *:nth-child(6) { opacity:1; transform:translateY(0); transition-delay:0.40s; }
     .reveal-stagger.visible > *:nth-child(7) { opacity:1; transform:translateY(0); transition-delay:0.48s; }
     .reveal-stagger.visible > *:nth-child(8) { opacity:1; transform:translateY(0); transition-delay:0.56s; }
-
-    /* ============================================================
-       TOAST NOTIFICATION
-    ============================================================ */
     .toast-container {
       position: fixed;
       bottom: 28px; right: 28px;
@@ -1542,9 +1475,6 @@
     .toast.show { transform: translateX(0); opacity: 1; }
     .toast-icon { font-size: 18px; }
 
-    /* ============================================================
-       LOADING SCREEN
-    ============================================================ */
     #loader {
       position: fixed;
       inset: 0;
@@ -1614,9 +1544,6 @@
       text-transform: uppercase;
     }
 
-    /* ============================================================
-       BACK TO TOP
-    ============================================================ */
     #back-top {
       position: fixed;
       bottom: 28px; left: 28px;
@@ -1637,10 +1564,7 @@
 
     #back-top.show { transform: translateY(0); opacity: 1; }
     #back-top:hover { transform: translateY(-3px); box-shadow: 0 12px 30px var(--purple-glow); }
-
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
+ 
     @media (max-width: 1024px) {
       .hero { padding: 90px 32px 60px; flex-direction: column; text-align: center; gap: 48px; }
       .hero-content { max-width: 100%; }
@@ -1794,7 +1718,6 @@
         padding: 32px 24px 80px;
       }
 
-      /* FILTER BAR */
       .filter-bar {
         display: flex;
         align-items: center;
@@ -2127,9 +2050,6 @@
 </head>
 <body>
 
-<!-- ============================================================
-     LOADING SCREEN
-============================================================ -->
 <div id="loader">
   <div class="loader-logo">
     <div class="loader-logo-icon">🎬</div>
@@ -2138,29 +2058,15 @@
   <div class="loader-bar"><div class="loader-fill"></div></div>
   <div class="loader-text">Loading your experience</div>
 </div>
-
-<!-- ============================================================
-     AMBIENT / BACKGROUND
-============================================================ -->
 <canvas id="starfield"></canvas>
 <div class="noise"></div>
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
 <div class="orb orb-3"></div>
-
-<!-- Custom cursor -->
 <div id="cursor-dot"></div>
 <div id="cursor-ring"></div>
-
-<!-- Toast container -->
 <div class="toast-container" id="toastContainer"></div>
-
-<!-- Back to top -->
 <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
-<!-- ============================================================
-     SEARCH OVERLAY
-============================================================ -->
 <div id="search-overlay">
   <div class="search-box">
     <div class="search-input-wrap">
@@ -2181,9 +2087,6 @@
   </div>
 </div>
 
-<!-- ============================================================
-     NAVIGATION
-============================================================ -->
 <nav id="navbar">
   <a href="#" class="nav-logo">
     <div class="nav-logo-icon">🎬</div>
@@ -2208,10 +2111,7 @@
     <div class="nav-icon-btn" onclick="showToast('👤', 'Sign in to access your profile!')">👤</div>
   </div>
 </nav>
-
-<!-- ============================================================
-     HERO
-============================================================ -->
+ 
 <section class="hero" id="hero">
   <div class="hero-bg">
     <div class="hero-bg-gradient"></div>
@@ -2259,8 +2159,6 @@
 
   <div class="hero-visual">
     <div class="hero-badge-float">
-      <!-- <div class="badge-label">Now Trending</div>
-      <div class="badge-val">#1 Movie</div> -->
     </div>
 
     <div class="hero-movie-card" id="heroCard">
@@ -2290,10 +2188,6 @@
     </div>
   </div>
 </section>
-
-<!-- ============================================================
-     TICKER
-============================================================ -->
 <div class="ticker-wrap">
   <div class="ticker-track" id="tickerTrack">
     <div class="ticker-item"><div class="ticker-dot"></div> New Release: Timeless Adventures</div>
@@ -2302,7 +2196,6 @@
     <div class="ticker-item"><div class="ticker-dot"></div> Disney+ announces VR experience</div>
     <div class="ticker-item"><div class="ticker-dot"></div> Spider-Man tops box office worldwide</div>
     <div class="ticker-item"><div class="ticker-dot"></div> Maleficent sequel in development</div>
-    <!-- duplicated for seamless loop -->
     <div class="ticker-item"><div class="ticker-dot"></div> New Release: Timeless Adventures</div>
     <div class="ticker-item"><div class="ticker-dot"></div> Tom Hanks joins Disney's latest adventure</div>
     <div class="ticker-item"><div class="ticker-dot"></div> Avatar 3 confirmed for 2025</div>
@@ -2365,7 +2258,6 @@
       <div class="post-activity">1d</div>
     </div>
 
-    <!-- POST 3 with Poll + Comments -->
     <div class="poll-card">
       <div class="poll-card-title">
         Disney Active Life Movie Soundtracks 🎵
@@ -2374,7 +2266,6 @@
         I absolutely love the soundtracks of Disney Active Life movies! The music often sets the mood, enhances emotional moments, and becomes memorable long after the film is over. On a scale of 1 to 10? 🎶
       </p>
 
-      <!-- POLL -->
       <div class="poll-options">
         <div class="poll-option-row">
           <div class="poll-label-row">
@@ -2516,23 +2407,13 @@
   </div>
 </footer>
 
-
-
-<!-- ============================================================
-     POPULAR / BROWSE
-
-<!-- ============================================================
-     JAVASCRIPT
-============================================================ -->
 <script>
-  /* ---- LOADER ---- */
   window.addEventListener('load', () => {
     setTimeout(() => {
       document.getElementById('loader').classList.add('hidden');
     }, 2000);
   });
 
-  /* ---- STARFIELD CANVAS ---- */
   (function () {
     const canvas = document.getElementById('starfield');
     const ctx = canvas.getContext('2d');
@@ -2577,7 +2458,6 @@
     window.addEventListener('resize', () => { resize(); init(); });
   })();
 
-  /* ---- FLOATING PARTICLES IN HERO ---- */
   (function () {
     const container = document.getElementById('heroParticles');
     for (let i = 0; i < 20; i++) {
@@ -2596,7 +2476,7 @@
     }
   })();
 
-  /* ---- CUSTOM CURSOR ---- */
+  
   const dot  = document.getElementById('cursor-dot');
   const ring = document.getElementById('cursor-ring');
   let mx = 0, my = 0, rx = 0, ry = 0;
@@ -2620,7 +2500,6 @@
     el.addEventListener('mouseleave', () => ring.classList.remove('expanded'));
   });
 
-  /* ---- NAVBAR SCROLL ---- */
   const navbar = document.getElementById('navbar');
   const backTop = document.getElementById('back-top');
 
@@ -2630,7 +2509,6 @@
     backTop.classList.toggle('show', sy > 400);
   });
 
-  /* ---- SEARCH OVERLAY ---- */
   document.getElementById('search-open-btn').addEventListener('click', () => {
     document.getElementById('search-overlay').classList.add('open');
     setTimeout(() => document.getElementById('search-input').focus(), 100);
@@ -2667,8 +2545,6 @@
     document.getElementById('search-input').value = text;
     document.getElementById('search-input').focus();
   }
-
-  /* ---- TOAST NOTIFICATION ---- */
   function showToast(icon, msg) {
     const container = document.getElementById('toastContainer');
     const toast = document.createElement('div');
@@ -2684,14 +2560,12 @@
     }, 3000);
   }
 
-  /* ---- WISHLIST TOGGLE ---- */
   function toggleWishlist(btn, title) {
     const liked = btn.classList.toggle('liked');
     btn.textContent = liked ? '♥' : '♡';
     showToast(liked ? '❤️' : '💔', liked ? `${title} added to wishlist!` : `${title} removed from wishlist`);
   }
 
-  /* ---- CATEGORY TABS FILTER ---- */
   document.getElementById('catTabs').addEventListener('click', e => {
     const tab = e.target.closest('.cat-tab');
     if (!tab) return;
@@ -2757,12 +2631,10 @@
     dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
   }
 
-  // Auto-advance news
   setInterval(() => {
     switchNews((currentNews + 1) % newsData.length);
   }, 5000);
 
-  // Apply transition to image
   document.getElementById('newsMainImg').style.transition = 'opacity 0.4s, transform 0.6s';
 
   /* ---- COUNTER ANIMATION ---- */
@@ -2789,11 +2661,9 @@
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
 
-        // Trigger counter if stat element
         entry.target.querySelectorAll('[data-count]').forEach(el => {
           animateCounter(el, parseInt(el.dataset.count));
         });
-
         revealObserver.unobserve(entry.target);
       }
     });
@@ -2803,7 +2673,6 @@
     revealObserver.observe(el);
   });
 
-  // Also observe hero stats (already in DOM)
   const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -2817,7 +2686,6 @@
 
   document.querySelectorAll('.hero-stats').forEach(el => statsObserver.observe(el));
 
-  /* ---- 3D CARD TILT (hero movie card) ---- */
   const heroCard = document.getElementById('heroCard');
   heroCard.addEventListener('mousemove', e => {
     const rect = heroCard.getBoundingClientRect();
@@ -2840,7 +2708,6 @@
     }
   });
 
-  /* ---- SMOOTH NAV LINK ACTIVE STATE ---- */
   const sections = document.querySelectorAll('[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
 

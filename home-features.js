@@ -1,22 +1,8 @@
-/* ============================================================
-   HOME PAGE — Animated Counters + Comments Section
-   PreMovie | Vanilla JS — drop this before </body>
-   ============================================================ */
-
-/* ──────────────────────────────────────────────
-   1. ANIMATED COUNTERS
-   Observes any element with [data-count="TARGET"]
-   and animates from 0 → TARGET when it enters
-   the viewport. Supports an optional suffix span.
-
-   HTML example (already in home.html hero-stats):
-   <div class="stat-value" data-count="12000">0<span>+</span></div>
-   ────────────────────────────────────────────── */
 (function initCounters() {
   function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
 
   function animateCounter(el) {
-    if (el._counted) return;           // run only once
+    if (el._counted) return;   
     el._counted = true;
 
     const target   = parseInt(el.dataset.count, 10);
@@ -51,25 +37,10 @@
   document.querySelectorAll('[data-count]').forEach(el => observer.observe(el));
   document.querySelectorAll('.hero-stats, .stats-section, .stats-grid').forEach(el => observer.observe(el));
 })();
-
-
-/* ──────────────────────────────────────────────
-   2. COMMENTS SECTION
-   Renders inside <div id="comments-section"></div>
-   — add that div anywhere in home.html.
-
-   Features:
-   • Displays seeded comments
-   • Add new comments with avatar initials
-   • Like / dislike per comment
-   • Reply toggle UI
-   • Timestamps (relative)
-   ────────────────────────────────────────────── */
 (function initComments() {
   const container = document.getElementById('comments-section');
   if (!container) return;
 
-  /* ── seed data ── */
   const seed = [
     { id: 1,  author: 'Alex Rivera',   avatar: 'AR', text: 'One of the most visually stunning films ever made. James Cameron really outdid himself!', likes: 142, time: Date.now() - 3600000 * 5,  replies: [] },
     { id: 2,  author: 'Priya Nair',    avatar: 'PN', text: "The world-building on Pandora is just breathtaking. Every frame looks like a painting.", likes: 87,  time: Date.now() - 3600000 * 12, replies: [] },
@@ -266,7 +237,6 @@
       });
     });
 
-    /* submit reply */
     document.querySelectorAll('.pm-submit-reply').forEach(btn => {
       btn.addEventListener('click', () => {
         const id      = parseInt(btn.dataset.id);

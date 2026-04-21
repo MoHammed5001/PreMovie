@@ -602,125 +602,62 @@
     transition: transform 0.4s;
 
   }
-
-
-
   .movie-card:hover .movie-card-img img { transform: scale(1.08); }
-
-
-
   .movie-card-placeholder {
 
     width: 100%; height: 100%;
-
     display: flex; align-items: center; justify-content: center;
-
     font-size: 40px;
-
     position: relative;
-
   }
-
-
-
   .card-overlay {
-
     position: absolute; bottom: 0; left: 0; right: 0;
-
     background: linear-gradient(transparent, rgba(0,0,0,0.9));
-
     padding: 24px 10px 10px;
-
   }
-
-
-
   .card-rating {
 
     display: flex; align-items: center; gap: 4px;
-
     font-size: 11px; color: var(--yellow);
-
   }
-
-
-
   .movie-card-title {
-
     font-size: 13px; font-weight: 500; color: #fff;
-
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-
   }
-
-
-
   .movie-card-genre {
-
     font-size: 11px; color: var(--text-muted);
-
     margin-top: 2px;
-
   }
-
-
 
   .heart-btn {
-
     position: absolute; top: 8px; right: 8px;
-
     width: 28px; height: 28px;
-
     background: rgba(0,0,0,0.6); border: none;
-
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
-
     cursor: pointer; font-size: 12px;
-
     opacity: 0; transition: opacity 0.2s;
-
   }
-
-
-
   .movie-card:hover .heart-btn { opacity: 1; }
 
-
-
-  /* ===== RELATED ===== */
-
- 
-
 .related-grid {
-
     display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 20px 0;
-
 }
 #new1{
   position: relative;
   top:30px;
 }
 
-
 .related-card {
-
     flex: 0 0 220px; background: var(--bg-card); border-radius: 12px;
-
     overflow: hidden; border: 1px solid var(--border); cursor: pointer; transition: all 0.3s ease;
-
 }
-
-
 
 .related-card:hover {
 
     border-color: var(--purple); transform: translateY(-5px);
-
     box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 
 }
-
-
 
 .related-img { width: 100%; height: 300px; overflow: hidden; position: relative; }
 
@@ -734,7 +671,6 @@
 
 .related-rating { font-size: 12px; color: var(--yellow); display: flex; align-items: center; gap: 4px; }
 
-  /* ===== NEWS SECTION ===== */
 .news-hero {
   position: relative;
   width: 100%;
@@ -742,14 +678,11 @@
   overflow: hidden;
   border-radius: 12px;
 }
-
-/* 🔥 الخلفية */
 .news-hero-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
-
 .news-hero-bg img {
   width: 100%;
   height: 100%;
@@ -757,8 +690,6 @@
   object-position: center;
   display: block;
 }
-
-
 .news-hero::after {
   content: "";
   position: absolute;
@@ -793,7 +724,6 @@
   color: var(--yellow);
 }
 
-/* 🔥 النقاط */
 .news-dots {
   display: flex;
   gap: 6px;
@@ -805,18 +735,15 @@
   gap: 40px;
   margin-top: 100px;
 }
-
-/* 🔥 الكرت */
 .news-item {
   display: flex;
   gap: 30px;
   align-items: flex-start;
 }
 
-/* 🔥 الصورة (كبيرة وواضحة) */
 .news-thumb {
-  width: 220px;   /* 👈 كبرناها */
-  height: 300px;  /* 👈 طول مثل البوستر */
+  width: 220px;
+  height: 300px;
   border-radius: 12px;
   overflow: hidden;
   flex-shrink: 0;
@@ -829,50 +756,37 @@
   object-fit: cover;
   transition: 0.4s;
 }
-
-/* 🔥 تأثير احترافي */
 .news-thumb:hover img {
   transform: scale(1.05);
 }
-
-/* 🔥 المحتوى */
 .news-content {
   flex: 1;
   max-width: 600px;
   position: relative;
- 
 }
 
-/* 🔥 العنوان */
 .news-title {
   font-size: 20px;
   font-weight: 700;
-  color: #facc15; /* أصفر */
+  color: #facc15; 
   margin-bottom: 8px;
 }
 
-/* 🔥 التاريخ */
 .news-tag {
   font-size: 12px;
   color: #a78bfa;
   margin-bottom: 6px;
 }
-
-/* 🔥 الوصف */
 .news-excerpt {
   font-size: 14px;
   color: #ccc;
   line-height: 1.7;
   margin-bottom: 12px;
 }
-
-/* 🔥 اللايك */
 .news-likes {
   font-size: 13px;
   color: #aaa;
 }
-
-/* 🔥 Responsive */
 @media (max-width: 768px) {
   .news-item {
     flex-direction: column;
@@ -919,41 +833,18 @@
 .news-arrow:hover {
   background: rgba(255,255,255,0.2);
 }
-
-  /* ===== DIVIDER ===== */
-
   .divider {
-
     height: 1px;
-
     background: linear-gradient(90deg, transparent, var(--border), transparent);
-
     margin: 0 48px;
-
   }
-
-
-
-  /* ===== FOOTER ===== */
-
   footer {
-
     padding: 48px; border-top: 1px solid var(--border);
-
     display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-
     gap: 40px; margin-top: 40px;
-
   }
-
-
-
   .footer-brand .nav-logo { margin-bottom: 16px; }
-
   .footer-brand p { font-size: 13px; color: var(--text-muted); line-height: 1.6; max-width: 280px; }
-
-
-
   .footer-col h4 { font-size: 14px; font-weight: 600; margin-bottom: 16px; color: #fff; }
 
   .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
@@ -961,131 +852,58 @@
   .footer-col li a { text-decoration: none; color: var(--text-muted); font-size: 13px; transition: color 0.2s; }
 
   .footer-col li a:hover { color: var(--purple-light); }
-
-
-
   .footer-bottom {
-
     padding: 20px 48px;
-
     border-top: 1px solid var(--border);
-
     display: flex; justify-content: space-between; align-items: center;
-
     font-size: 12px; color: var(--text-muted);
-
   }
-
-
-
-  /* ===== BG EFFECTS ===== */
-
   .bg-orb {
-
     position: fixed; pointer-events: none; z-index: 0;
-
     border-radius: 50%; filter: blur(80px); opacity: 0.08;
-
   }
-
-
-
   .orb1 {
-
     width: 600px; height: 600px;
-
     background: var(--purple);
-
     top: -200px; right: -200px;
-
     animation: float 8s ease-in-out infinite;
-
   }
-
-
-
   .orb2 {
-
     width: 400px; height: 400px;
-
     background: #c026d3;
-
     bottom: 20%; left: -100px;
-
     animation: float 10s ease-in-out infinite reverse;
-
   }
-
-
-
   @keyframes float {
-
     0%, 100% { transform: translateY(0) scale(1); }
-
     50% { transform: translateY(-30px) scale(1.05); }
-
   }
-
-
-
-  /* ===== RESPONSIVE ===== */
-
   @media (max-width: 900px) {
-
     .hero { grid-template-columns: 1fr; padding: 40px 24px; }
-
     .hero-info { padding-left: 0; margin-top: 32px; }
-
     .hero-title { font-size: 36px; }
-
     nav { padding: 0 24px; }
-
     .nav-links { display: none; }
-
     section { padding: 40px 24px; }
-
     footer { grid-template-columns: 1fr 1fr; padding: 40px 24px; }
-
     .footer-bottom { padding: 20px 24px; }
-
     .divider { margin: 0 24px; }
 
   }
-
-
-
-  /* ===== COLORS FOR PLACEHOLDERS ===== */
-
   .c1 { background: linear-gradient(135deg, #1a237e, #7b1fa2); }
-
   .c2 { background: linear-gradient(135deg, #1b5e20, #2e7d32); }
-
   .c3 { background: linear-gradient(135deg, #b71c1c, #c62828); }
-
   .c4 { background: linear-gradient(135deg, #e65100, #ef6c00); }
-
   .c5 { background: linear-gradient(135deg, #004d40, #00695c); }
-
   .c6 { background: linear-gradient(135deg, #311b92, #4527a0); }
-
   .c7 { background: linear-gradient(135deg, #880e4f, #ad1457); }
-
   .c8 { background: linear-gradient(135deg, #0d47a1, #1565c0); }
-
   .cn1 { background: linear-gradient(135deg, #37474f, #546e7a); }
-
   .cn2 { background: linear-gradient(135deg, #4a148c, #6a1b9a); }
 
-
-
-  /* fade in */
-
   .fade-in {
-
     opacity: 0; transform: translateY(20px);
-
     animation: fadeIn 0.6s ease forwards;
-
   }
 
   @keyframes fadeIn {
@@ -1100,12 +918,6 @@
 
   .delay-3 { animation-delay: 0.3s; }
 
-/* ============================================
-   ADDITIONS: Browse sections (Popular / For You)
-   + Trending + hero poster img fix
-   ============================================ */
-
-/* Hero poster image inside placeholder */
 .hero-poster-placeholder img {
   width: 100%;
   height: 100%;
@@ -1114,7 +926,6 @@
   display: block;
 }
 
-/* ===== BROWSE SECTION (Popular / For you) ===== */
 .browse-section {
   padding: 8px 48px 32px;
 }
@@ -1186,7 +997,6 @@
   padding: 0 2px;
 }
 
-/* ===== TRENDING SECTION ===== */
 .trending-section {
   padding: 8px 48px 48px;
 }
@@ -1241,9 +1051,6 @@
   text-overflow: ellipsis;
   padding: 0 2px;
 }
-
-/* heart-btn already defined above for browse-card,
-   apply same for movie-card */
 .movie-card-img .heart-btn {
   position: absolute;
   top: 8px; right: 8px;
@@ -1258,7 +1065,6 @@
 
 .movie-card:hover .heart-btn { opacity: 1; }
 
-/* Responsive */
 @media (max-width: 900px) {
   .browse-section { padding: 8px 24px 28px; }
   .trending-section { padding: 8px 24px 40px; }
