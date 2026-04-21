@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreMovie – Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* ===== PROJECT PAGE ===== */
+      .project-page {
+        min-height: 100vh;
+        padding-top: 100px;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* HERO BANNER */
+      .project-banner {
+        position: relative;
+        margin: 0 48px 80px;
+        border-radius: 24px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #0d0820 0%, #1a0a3e 40%, #2d1b69 70%, #7c3aed 100%);
+        padding: 60px 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        min-height: 320px;
+      }
+
+      .project-banner::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: 
+          radial-gradient(ellipse at 80% 50%, rgba(124,58,237,0.4) 0%, transparent 60%),
+          radial-gradient(ellipse at 20% 80%, rgba(192,38,211,0.3) 0%, transparent 50%);
+      }
+
+      .project-banner-glow {
+        position: absolute;
+        top: -60px; right: 120px;
+        width: 300px; height: 300px;
+        background: var(--purple);
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.25;
+      }
+
+      .project-banner-text {
+        position: relative; z-index: 2;
+        flex: 1;
+      }
+
+      .project-banner-text h1 {
+        font-family: 'Cinzel', serif;
+        font-size: 52px;
+        font-weight: 700;
+        line-height: 1.1;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+
+      .project-banner-text h1 .outline-text {
+        -webkit-text-stroke: 1px rgba(255,255,255,0.5);
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        display: block;
+        letter-spacing: 8px;
+        font-size: 42px;
+      }
+
+      .project-banner-text .subtitle-tag {
+        font-size: 12px;
+        letter-spacing: 4px;
+        color: var(--purple-light);
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        display: block;
+      }
+
+      .project-banner-screens {
+        position: relative; z-index: 2;
+        flex-shrink: 0;
+        width: 420px;
+      }
+
+      .mockup-stack {
+        position: relative;
+        height: 280px;
+      }
+
+      .mockup-laptop {
+        position: absolute;
+        right: 0; bottom: 0;
+        width: 340px;
+        background: #1a1a2e;
+        border-radius: 12px;
+        border: 2px solid rgba(124,58,237,0.4);
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.7), 0 0 40px rgba(124,58,237,0.2);
+      }
+
+      .mockup-laptop-bar {
+        height: 28px;
+        background: #0d0d1a;
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        gap: 6px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .mockup-dot {
+        width: 8px; height: 8px;
+        border-radius: 50%;
+      }
+
+      .md-red { background: #ff5f57; }
+      .md-yellow { background: #febc2e; }
+      .md-green { background: #28c840; }
+
+      .mockup-laptop-screen {
+        height: 180px;
+        background: linear-gradient(135deg, #0a0a12, #1a0a3e);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .mockup-laptop-screen::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: 
+          linear-gradient(45deg, rgba(124,58,237,0.1) 25%, transparent 25%),
+          linear-gradient(-45deg, rgba(124,58,237,0.05) 25%, transparent 25%);
+        background-size: 40px 40px;
+      }
+
+      .mockup-mini-ui {
+        position: absolute;
+        inset: 0;
+        padding: 10px;
+        z-index: 1;
+      }
+
+      .mini-nav { 
+        height: 14px; 
+        background: rgba(124,58,237,0.3); 
+        border-radius: 3px; 
+        margin-bottom: 8px;
+      }
+
+
+      .mini-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+      }
+
+      .mockup-phone {
+        position: absolute;
+        left: 0; top: 20px;
+        width: 110px;
+        background: #1a1a2e;
+        border-radius: 16px;
+        border: 2px solid rgba(124,58,237,0.5);
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      }
+
+      .mockup-phone-notch {
+        height: 20px;
+        background: #0d0d1a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mockup-phone-notch::after {
+        content: '';
+        width: 40px; height: 8px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 4px;
+      }
+
+      .mockup-phone-screen {
+        height: 160px;
+        background: linear-gradient(135deg, #0a0a12, #1a0a3e);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .mockup-phone-screen img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.7;
+      }
+
+      /* OBJECTIVES SECTION */
+      .objectives-section {
+        padding: 0 48px 80px;
+      }
+
+      .objectives-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 48px;
+      }
+
+      .objectives-header h2 {
+        font-family: 'Cinzel', serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      .objectives-header h2 span {
+        color: var(--purple-light);
+      }
+
+      .objectives-line {
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, var(--purple), transparent);
+      }
+
+      .objectives-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .obj-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 28px 32px;
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .obj-card::before {
+        content: '';
+        position: absolute;
+        left: 0; top: 0; bottom: 0;
+        width: 3px;
+        background: linear-gradient(180deg, var(--purple), var(--purple-light));
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .obj-card:hover {
+        border-color: var(--purple);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      }
+
+      .obj-card:hover::before {
+        opacity: 1;
+      }
+
+      .obj-number {
+        width: 44px; height: 44px;
+        background: linear-gradient(135deg, var(--purple), var(--purple-light));
+        border-radius: 12px;
+        display: flex; align-items: center; justify-content: center;
+        font-weight: 700; font-size: 18px; color: #fff;
+        flex-shrink: 0;
+      }
+
+      .obj-content h3 {
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 8px;
+        line-height: 1.4;
+      }
+
+      .obj-content p {
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+
+      /* MOVIE TIME BADGE */
+      .movie-time-badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 60px 48px;
+      }
+
+      .badge-inner {
+        position: relative;
+        background: linear-gradient(135deg, #1a0a3e, #2d1b69);
+        border: 2px solid var(--purple);
+        border-radius: 20px;
+        padding: 40px 60px;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        box-shadow: 0 0 60px rgba(124,58,237,0.3);
+      }
+
+      .clapper-icon {
+        font-size: 80px;
+        filter: drop-shadow(0 0 20px rgba(124,58,237,0.6));
+        animation: wiggle 3s ease-in-out infinite;
+      }
+
+      @keyframes wiggle {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(-5deg); }
+        75% { transform: rotate(5deg); }
+      }
+
+      .badge-text {
+        font-family: 'Cinzel', serif;
+      }
+
+      .badge-text .movie { 
+        font-size: 48px; 
+        font-weight: 700; 
+        color: var(--yellow);
+        display: block;
+        line-height: 1;
+      }
+
+      .badge-text .time { 
+        font-size: 48px; 
+        font-weight: 700; 
+        color: #fff;
+        display: block;
+        line-height: 1;
+      }
+
+      /* FILM STRIP decoration */
+      .film-strip {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        overflow: hidden;
+      }
+
+      .film-hole {
+        width: 20px; height: 14px;
+        background: rgba(0,0,0,0.5);
+        border-radius: 3px;
+        border: 1px solid rgba(255,255,255,0.1);
+        margin: 3px 4px;
+      }
+
+      /* SPIRAL DECORATION */
+      .spiral-deco {
+        position: absolute;
+        top: -20px; right: -20px;
+        width: 200px; height: 200px;
+        opacity: 0.15;
+        pointer-events: none;
+      }
+
+      @media (max-width: 900px) {
+        .project-banner { 
+          margin: 0 24px 40px; 
+          flex-direction: column;
+          padding: 40px 24px;
+        }
+        .project-banner-screens { width: 100%; }
+        .objectives-section { padding: 0 24px 60px; }
+        .objectives-grid { grid-template-columns: 1fr; }
+        .project-banner-text h1 { font-size: 36px; }
+        .movie-time-badge { margin: 40px 24px; }
+      }
+    </style>
+</head>
+<body>
+
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+
+<nav>
+  <div class="nav-logo">
+    <span>🎬</span> PreMovie
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#movies">Movies</a></li>
+    <li><a href="index.html#news">News</a></li>
+    <li><a href="project.html" class="active">Project</a></li>
+    <li><a href="analysis.html">Analysis</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-icon">🔍</div>
+    <div class="nav-icon">🔔</div>
+    <div class="nav-icon" style="background: var(--purple); border-color: var(--purple);">👤</div>
+  </div>
+</nav>
+
+<div class="project-page fade-in">
+
+  <!-- BANNER WITH MOCKUP -->
+  <div class="project-banner">
+    <div class="project-banner-glow"></div>
+
+    <div class="project-banner-text">
+      <span class="subtitle-tag">Graduation Project · 2024</span>
+      <h1>
+        Movie
+        <span class="outline-text">website</span>
+      </h1>
+    </div>
+
+  
+        <!-- Laptop mockup -->
+        <div class="">
+          <div class="">
+            <div class=""></div>
+            <div class=""></div>
+            <div class=""></div>
+          </div>
+          <div class="">
+            <div class="">
+              <div class=""></div>
+              <div class="">
+                <div class="mini-card"><img src="img/laptp.png" alt=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOVIE TIME BADGE -->
+  <div class="movie-time-badge">
+    <div class="badge-inner">
+      <div class="clapper-icon">🎬</div>
+      <div class="badge-text">
+        <span class="movie">MOVIE</span>
+        <span class="time">TIME</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT OBJECTIVES -->
+  <div class="objectives-section">
+    <div class="objectives-header">
+      <h2>Project <span>Objectives:</span></h2>
+      <div class="objectives-line"></div>
+    </div>
+
+    <div class="objectives-grid">
+      <div class="obj-card fade-in">
+        <div class="obj-number">1</div>
+        <div class="obj-content">
+          <h3>Create an Immersive Online Platform</h3>
+          <p>Create an immersive online platform for exploring live-action movies with a cinematic feel and stunning visuals.</p>
+        </div>
+      </div>
+
+      <div class="obj-card fade-in">
+        <div class="obj-number">2</div>
+        <div class="obj-content">
+          <h3>Simplify Movie Discovery</h3>
+          <p>Simplify movie discovery through organized categories and personalized recommendations tailored to each user.</p>
+        </div>
+      </div>
+
+      <div class="obj-card fade-in">
+        <div class="obj-number">3</div>
+        <div class="obj-content">
+          <h3>Provide Detailed Movie Information</h3>
+          <p>Provide detailed movie information including summaries, cast, release dates and trailers for informed viewing choices.</p>
+        </div>
+      </div>
+
+      <div class="obj-card fade-in">
+        <div class="obj-number">4</div>
+        <div class="obj-content">
+          <h3>Foster User Interaction</h3>
+          <p>Foster user interaction and community engagement among movie enthusiasts through reviews and discussion forums.</p>
+        </div>
+      </div>
+
+      <div class="obj-card fade-in">
+        <div class="obj-number">5</div>
+        <div class="obj-content">
+          <h3>Keep Users Updated</h3>
+          <p>Keep users updated with the latest movie news and announcements from studios and streaming platforms.</p>
+        </div>
+      </div>
+
+      <div class="obj-card fade-in">
+        <div class="obj-number">6</div>
+        <div class="obj-content">
+          <h3>Design a Visually Appealing Interface</h3>
+          <p>Design a visually appealing and user-friendly interface that makes browsing enjoyable and intuitive.</p>
+        </div>
+      </div>
+
+      <div class="obj-card fade-in">
+        <div class="obj-number">7</div>
+        <div class="obj-content">
+          <h3>Ensure Cross-Device Compatibility</h3>
+          <p>Ensure cross-device compatibility for seamless user experience across desktop, tablet, and mobile devices.</p>
+        </div>
+      </div>
+
+      <div class="obj-card fade-in">
+        <div class="obj-number">8</div>
+        <div class="obj-content">
+          <h3>Continually Improve and Expand</h3>
+          <p>Continually improve and expand the website based on user feedback and future plans for growth.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-bottom" style="border-top: 1px solid var(--border);">
+  <span>© 2024 PreMovie. All rights reserved.</span>
+  <span style="display:flex;gap:16px;">
+    <a href="index.html" style="color:var(--purple-light);text-decoration:none;">← Back to Home</a>
+  </span>
+</div>
+
+</body>
+</html>

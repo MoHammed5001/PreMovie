@@ -1,0 +1,290 @@
+/* ============================================================
+   HOME PAGE — Comments Section CSS
+   Paste into your <style> or link as a separate file.
+   Uses your existing CSS variables from style.css.
+   ============================================================ */
+
+/* ── Wrapper ── */
+.pm-comments {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 60px 48px;
+}
+
+.pm-comments-header {
+  margin-bottom: 32px;
+}
+
+.pm-comments-title {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pm-icon { font-size: 20px; }
+
+.pm-count-badge {
+  background: var(--purple);
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+/* ── Avatar ── */
+.pm-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.pm-avatar-sm {
+  width: 30px;
+  height: 30px;
+  font-size: 9px;
+}
+
+/* ── New Comment Form ── */
+.pm-comment-form {
+  display: flex;
+  gap: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 28px;
+  transition: border-color 0.25s;
+}
+
+.pm-comment-form:focus-within {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.12);
+}
+
+.pm-form-body { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+
+/* ── Textarea ── */
+.pm-textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(124,58,237,0.2);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 12px 14px;
+  resize: vertical;
+  transition: border-color 0.2s, background 0.2s;
+  outline: none;
+}
+
+.pm-textarea::placeholder { color: var(--text-muted); }
+.pm-textarea:focus { border-color: var(--purple); background: rgba(124,58,237,0.06); }
+
+/* ── Form Footer ── */
+.pm-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pm-char-count { font-size: 12px; color: var(--text-muted); }
+
+/* ── Buttons ── */
+.pm-submit-btn {
+  background: var(--purple);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.pm-submit-btn:hover {
+  background: #9d5cf6;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(124,58,237,0.4);
+}
+
+.pm-submit-btn:active { transform: translateY(0); }
+
+/* ── Sort Bar ── */
+.pm-sort-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.pm-sort-label { font-size: 13px; color: var(--text-muted); margin-right: 4px; }
+
+.pm-sort-btn {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pm-sort-btn:hover { color: #fff; border-color: var(--purple); }
+
+.pm-sort-btn.active {
+  background: rgba(124,58,237,0.18);
+  border-color: var(--purple);
+  color: #c4a8ff;
+}
+
+/* ── Single Comment ── */
+.pm-comment {
+  display: flex;
+  gap: 14px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(124,58,237,0.1);
+  animation: commentIn 0.35s ease both;
+}
+
+.pm-comment:last-child { border-bottom: none; }
+
+@keyframes commentIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.pm-comment-body { flex: 1; }
+
+.pm-comment-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.pm-comment-head strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.pm-time {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.pm-comment-text {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+/* ── Action Buttons ── */
+.pm-comment-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pm-action-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+}
+
+.pm-action-btn:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: var(--border);
+  color: #fff;
+}
+
+.pm-like-btn.active  { background: rgba(124,58,237,0.15); border-color: var(--purple); color: #c4a8ff; }
+.pm-dislike-btn.active { background: rgba(220,38,38,0.12); border-color: #dc2626; color: #f87171; }
+
+/* ── Reply Form ── */
+.pm-reply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  animation: commentIn 0.2s ease;
+}
+
+/* ── Replies List ── */
+.pm-replies { margin-top: 14px; display: flex; flex-direction: column; gap: 12px; }
+
+.pm-reply {
+  display: flex;
+  gap: 10px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.025);
+  border-left: 2px solid rgba(124,58,237,0.35);
+  border-radius: 0 10px 10px 0;
+}
+
+.pm-reply-body { flex: 1; }
+.pm-reply-body strong { font-size: 13px; color: #fff; margin-right: 8px; }
+.pm-reply-body p { font-size: 13px; color: var(--text); line-height: 1.55; margin-top: 4px; }
+
+/* ── Toast ── */
+.pm-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: rgba(124,58,237,0.9);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  z-index: 9999;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 32px rgba(124,58,237,0.4);
+}
+
+.pm-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .pm-comments { padding: 40px 20px; }
+  .pm-comment-form { padding: 14px; }
+}

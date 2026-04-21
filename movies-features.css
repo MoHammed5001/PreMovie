@@ -1,0 +1,205 @@
+/* ============================================================
+   MOVIES PAGE — Play Overlay + Video Modal CSS
+   Paste into style.css or link as a separate file.
+   ============================================================ */
+
+/* ──────────────────────────────────────────────
+   PLAY OVERLAY
+   ────────────────────────────────────────────── */
+.pm-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  border-radius: inherit;
+  z-index: 3;
+  pointer-events: none; /* card's click handles it */
+}
+
+/* Show on parent hover */
+.movie-card:hover .pm-play-overlay,
+.browse-card:hover .pm-play-overlay,
+.related-card:hover .pm-play-overlay,
+.hero-poster-placeholder:hover .pm-play-overlay {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Play circle button */
+.pm-play-circle {
+  width: 52px;
+  height: 52px;
+  background: rgba(124, 58, 237, 0.88);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 0 24px rgba(124, 58, 237, 0.7), 0 4px 16px rgba(0,0,0,0.4);
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), opacity 0.25s ease;
+  backdrop-filter: blur(4px);
+}
+
+/* Animate in on hover */
+.movie-card:hover        .pm-play-circle,
+.browse-card:hover       .pm-play-circle,
+.related-card:hover      .pm-play-circle,
+.hero-poster-placeholder:hover .pm-play-circle {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Also show on click (for touch devices) */
+.pm-play-circle:active {
+  transform: scale(0.92);
+}
+
+/* Larger circle for hero poster */
+.hero-poster-placeholder .pm-play-circle {
+  width: 68px;
+  height: 68px;
+}
+.hero-poster-placeholder .pm-play-circle svg {
+  width: 36px;
+  height: 36px;
+}
+
+/* Related card has taller image — center nicely */
+.related-img { position: relative; }
+
+
+/* ──────────────────────────────────────────────
+   VIDEO MODAL
+   ────────────────────────────────────────────── */
+.pm-video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pm-video-modal.open {
+  pointer-events: all;
+  opacity: 1;
+}
+
+/* Blurred dark backdrop */
+.pm-video-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 4, 12, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Modal container */
+.pm-video-container {
+  position: relative;
+  z-index: 1;
+  width: min(880px, 92vw);
+  background: #0e0e1a;
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow:
+    0 0 80px rgba(124, 58, 237, 0.25),
+    0 40px 100px rgba(0, 0, 0, 0.7);
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.34, 1.3, 0.64, 1), opacity 0.3s;
+  opacity: 0;
+}
+
+.pm-video-modal.open .pm-video-container {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Close button */
+.pm-video-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.pm-video-close:hover {
+  background: rgba(220, 38, 38, 0.7);
+  transform: scale(1.1) rotate(90deg);
+}
+
+/* Title bar */
+.pm-video-title-bar {
+  padding: 16px 56px 12px 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+#pm-video-title-text {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.pm-video-year {
+  font-size: 12px;
+  color: #a78bfa;
+  font-weight: 500;
+}
+
+/* 16:9 iframe wrapper */
+.pm-video-frame-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  background: #000;
+}
+
+.pm-video-frame-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .pm-video-container {
+    width: 96vw;
+    border-radius: 14px;
+  }
+
+  .pm-play-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .pm-play-circle svg {
+    width: 20px;
+    height: 20px;
+  }
+}
